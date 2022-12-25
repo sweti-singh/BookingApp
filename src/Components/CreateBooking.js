@@ -62,7 +62,7 @@ const CreateBooking = () => {
             //setValid(false)
             setErrorMsg("")
             try{
-            const resp= await axios.post('http://localhost:4000/booking', {
+            const resp= await axios.post('https://my-json-server.typicode.com/sweti-singh/bookingJson/booking', {
                 Caterers: state.Caterers,
                 Email: state.Email,
                 Plate: state.Plate,
