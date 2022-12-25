@@ -48,7 +48,7 @@ const UpdateBooking = () => {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:4000/booking/' + params.id).then(resp => {
+        axios.get('https://my-json-server.typicode.com/sweti-singh/bookingJson/booking/' + params.id).then(resp => {
             setBooking(resp.data)
             console.log(booking)
         })
@@ -84,7 +84,7 @@ const UpdateBooking = () => {
             Date: newBooking.Date,
             id: newBooking.id
         }
-        axios.put("http://localhost:4000/booking/" + params.id, justNowBooking).then(resp => setSuccess('successful')).catch(err => setError('failed'))}
+        axios.put("https://my-json-server.typicode.com/sweti-singh/bookingJson/booking/" + params.id, justNowBooking).then(resp => setSuccess('successful')).catch(err => setError('failed'))}
     }
 
     const validateField = (event) => {
