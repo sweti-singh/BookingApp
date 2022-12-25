@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import CreateBooking from './Components/CreateBooking';
+import ViewBooking from './Components/ViewBooking';
+import UpdateBooking from './Components/UpdateBooking';
+import './App.css'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <h1 className='Heading'>FLOATING RESTAURANT</h1><br></br>
+        <div className='Link-class'>
+            <Link className='link' to='/createBooking'>Book Buffet</Link>&nbsp;
+            <Link className='link' to='/viewBooking'>View Booking</Link>
+         </div>
+      </div>
+
+      <Routes basename={process.env.PUBLIC_URL}>
+        <Route path='/' element={<CreateBooking />} />
+        <Route path='/createBooking' element={<CreateBooking />} />
+        <Route path='/viewBooking' element={<ViewBooking />} />
+        <Route path='/updateBooking/:id' element={<UpdateBooking />} />
+      </Routes>
+
+    </BrowserRouter>
+
   );
 }
 
