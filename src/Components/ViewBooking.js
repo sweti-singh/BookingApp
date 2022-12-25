@@ -27,7 +27,7 @@ const ViewBooking = () => {
     const handleAction = (action) => {
         let id = parseInt(states.bookingId)
         if (action === 'onDelete') {
-            axios.delete('http://localhost:4000/booking/' + id)
+            axios.delete('https://my-json-server.typicode.com/sweti-singh/bookingJson/booking/' + id)
         }
         else if (action === 'onUpdate') {
             navigate(`/updateBooking/${id}`)
